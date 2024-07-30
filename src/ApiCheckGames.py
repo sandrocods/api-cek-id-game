@@ -48,6 +48,13 @@ class ApiCheckGames:
         }
 
     def eight_ball_pool(self, userId):
+        if userId == '' or userId is None:
+            return {
+                'status': False,
+                'server_time': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                'message': 'User ID is Required',
+                'type_name': 'EIGHT_BALL_POOL',
+            }
         try:
             logger.info("Trying Requesting to API | Product: EIGHT_BALL_POOL | User ID: {}".format(userId))
             request_data = self.request.post(
@@ -99,6 +106,13 @@ class ApiCheckGames:
             }
 
     def aether_gazer(self, userId):
+        if userId == '' or userId is None:
+            return {
+                'status': False,
+                'server_time': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                'message': 'User ID is Required',
+                'type_name': 'AETHER_GAZER',
+            }
         try:
             logger.info("Trying Requesting to API | Product: AETHER_GAZER | User ID: {}".format(userId))
             request_data = self.request.post(
@@ -156,6 +170,13 @@ class ApiCheckGames:
             }
 
     def arena_of_valor(self, userId):
+        if userId == '' or userId is None:
+            return {
+                'status': False,
+                'server_time': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                'message': 'User ID is Required',
+                'type_name': 'ARENA_OF_VALOR',
+            }
         try:
             logger.info("Trying Requesting to API | Product: ARENA_OF_VALOR | User ID: {}".format(userId))
             request_data = self.request.post(
@@ -208,6 +229,13 @@ class ApiCheckGames:
             }
 
     def auto_chess(self, userId):
+        if userId == '' or userId is None:
+            return {
+                'status': False,
+                'server_time': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                'message': 'User ID is Required',
+                'type_name': 'AUTO_CHESS',
+            }
         try:
             logger.info("Trying Requesting to API | Product: AUTO_CHESS | User ID: {}".format(userId))
             request_data = self.request.post(
@@ -259,6 +287,20 @@ class ApiCheckGames:
             }
 
     def azur_lane(self, userId, zoneId):
+        if userId == '' or userId is None:
+            return {
+                'status': False,
+                'server_time': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                'message': 'User ID is Required',
+                'type_name': 'AZUR_LANE',
+            }
+        if zoneId == '' or zoneId is None:
+            return {
+                'status': False,
+                'server_time': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                'message': 'Zone ID is Required',
+                'type_name': 'AZUR_LANE',
+            }
         if zoneId == 'Avrora':
             zoneIdCode = '1'
         elif zoneId == 'Lexington':
@@ -329,7 +371,20 @@ class ApiCheckGames:
             }
 
     def bad_landers(self, userId, zoneId):
-
+        if userId == '' or userId is None:
+            return {
+                'status': False,
+                'server_time': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                'message': 'User ID is Required',
+                'type_name': 'BAD_LANDERS',
+            }
+        if zoneId == '' or zoneId is None:
+            return {
+                'status': False,
+                'server_time': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                'message': 'Zone ID is Required',
+                'type_name': 'BAD_LANDERS',
+            }
         if zoneId == 'Global':
             zoneIdCode = '11001'
         elif zoneId == 'JF':
@@ -394,6 +449,14 @@ class ApiCheckGames:
             }
 
     def barbarq(self, userId):
+        if userId == '' or userId is None:
+            return {
+                'status': False,
+                'server_time': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                'message': 'User ID is Required',
+                'type_name': 'BARBARQ',
+            }
+
         try:
             logger.info("Trying Requesting to API | Product: BARBARQ | User ID: {}".format(userId))
             request_data = self.request.post(
@@ -445,6 +508,22 @@ class ApiCheckGames:
             }
 
     def basketrio(self, userId, zoneId):
+        if userId == '' or userId is None:
+            return {
+                'status': False,
+                'server_time': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                'message': 'User ID is Required',
+                'type_name': 'BASKETRIO',
+            }
+
+        if zoneId == '' or zoneId is None:
+            return {
+                'status': False,
+                'server_time': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                'message': 'Zone ID is Required',
+                'type_name': 'BASKETRIO',
+            }
+
         if zoneId == 'Buzzer Beater':
             zoneIdCode = '2'
         elif zoneId == '001':
@@ -511,6 +590,13 @@ class ApiCheckGames:
             }
 
     def call_of_duty(self, userId):
+        if userId == '' or userId is None:
+            return {
+                'status': False,
+                'server_time': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                'message': 'User ID is Required',
+                'type_name': 'CALL_OF_DUTY',
+            }
         try:
             logger.info("Trying Requesting to API | Product: CALL_OF_DUTY | User ID: {}".format(userId))
             request_data = self.request.post(
@@ -562,6 +648,13 @@ class ApiCheckGames:
             }
 
     def dragon_city(self, userId):
+        if userId == '' or userId is None:
+            return {
+                'status': False,
+                'server_time': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                'message': 'User ID is Required',
+                'type_name': 'DRAGON_CITY',
+            }
         try:
             logger.info("Trying Requesting to API | Product: DRAGON_CITY | User ID: {}".format(userId))
             request_data = self.request.post(
@@ -613,6 +706,13 @@ class ApiCheckGames:
             }
 
     def free_fire(self, userId):
+        if userId == '' or userId is None:
+            return {
+                'status': False,
+                'server_time': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                'message': 'User ID is Required',
+                'type_name': 'FREE_FIRE',
+            }
         try:
             logger.info("Trying Requesting to API | Product: FREE_FIRE | User ID: {}".format(userId))
             request_data = self.request.post(
@@ -664,6 +764,13 @@ class ApiCheckGames:
             }
 
     def hago(self, userId):
+        if userId == '' or userId is None:
+            return {
+                'status': False,
+                'server_time': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                'message': 'User ID is Required',
+                'type_name': 'HAGO',
+            }
         try:
             logger.info("Trying Requesting to API | Product: HAGO | User ID: {}".format(userId))
             request_data = self.request.post(
@@ -715,6 +822,20 @@ class ApiCheckGames:
             }
 
     def mobile_legends(self, userId, zoneId):
+        if userId == '' or userId is None:
+            return {
+                'status': False,
+                'server_time': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                'message': 'User ID is Required',
+                'type_name': 'MOBILE_LEGENDS',
+            }
+        if zoneId == '' or zoneId is None:
+            return {
+                'status': False,
+                'server_time': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                'message': 'Zone ID is Required',
+                'type_name': 'MOBILE_LEGENDS',
+            }
         try:
             logger.info("Trying Requesting to API | Product: MOBILE_LEGENDS | User ID: {} | Zone ID: {}".format(userId, zoneId))
             request_data = self.request.post(
@@ -766,6 +887,13 @@ class ApiCheckGames:
             }
 
     def point_blank(self, userId):
+        if userId == '' or userId is None:
+            return {
+                'status': False,
+                'server_time': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                'message': 'User ID is Required',
+                'type_name': 'POINT_BLANK',
+            }
         try:
             logger.info("Trying Requesting to API | Product: POINT_BLANK | User ID: {}".format(userId))
             request_data = self.request.post(
@@ -817,6 +945,13 @@ class ApiCheckGames:
             }
 
     def valorant(self, userId):
+        if userId == '' or userId is None:
+            return {
+                'status': False,
+                'server_time': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                'message': 'User ID is Required',
+                'type_name': 'VALORANT',
+            }
         try:
             logger.info("Trying Requesting to API | Product: VALORANT | User ID: {}".format(userId))
             request_data = self.request.post(
