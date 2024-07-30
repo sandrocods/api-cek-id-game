@@ -14,6 +14,7 @@ A Python library designed to make it easier for game developers, data analysts, 
 | Logger Request | ✔ |
 | 15 Games Type | ✔ |
 | Web API | ✔ |
+| Web API Documentation |  ✔ |
 
 
 
