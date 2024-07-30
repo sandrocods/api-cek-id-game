@@ -4,22 +4,16 @@ import os
 # Add the top-level directory (api-cek-id-game) to the system path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from flask import Flask, request, jsonify
+from flask import Flask, render_template
 from datetime import datetime
 from api.apiCheckIdGame import apiCheckIdGame
 
-
-
-app = Flask(__name__)
+app = Flask(__name__, template_folder='views', static_folder='views')
 
 
 @app.route('/', methods=['GET'])
 def index():
-    return jsonify({
-        'status': True,
-        'message': 'Welcome to the cek-id-game API',
-        'server_time': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    })
+    return render_template('index.html')
 
 
 app.register_blueprint(apiCheckIdGame, url_prefix='/api')
