@@ -1,13 +1,7 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "requirements.txt",
-      "use": "@vercel/python",
-      "config": {
-        "install": "pip install -r requirements.txt"
-      }
-    },
+
     {
       "src": "example_web_apps/server.py",
       "use": "@vercel/python"
@@ -37,6 +31,5 @@
   ],
   "env": {
     "PYTHONPATH": "./src"
-  },
-
+  }
 }
