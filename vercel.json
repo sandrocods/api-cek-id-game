@@ -15,11 +15,7 @@
   ],
   "routes": [
     {
-      "src": "/api/cek-id-game",
-      "dest": "example_web_apps/server.py"
-    },
-    {
-      "src": "/api/cek-id-game/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)",
+      "src": "/api/(.*)",
       "dest": "example_web_apps/server.py"
     },
     {
@@ -28,6 +24,6 @@
     }
   ],
   "env": {
-    "PYTHONPATH": "./src"
+    "PYTHONPATH": "./example_web_apps"
   }
 }
