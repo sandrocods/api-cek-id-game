@@ -18,9 +18,7 @@ class ApiCheckGames:
     def __init__(self, debug=False, proxy=None):
         self.debug = debug
         logger.add(
-            sink="logs.log",
             format="<green>{time:YYYY-MM-DD HH:mm:ss}</green> | <level>{level: <8}</level> | <cyan><b>{message}</b></cyan>",
-            rotation="1 week",
         )
         logger.opt(colors=True)
 
