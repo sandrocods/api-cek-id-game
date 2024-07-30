@@ -7,6 +7,8 @@ Date    : 2024-07-30
 Version : 1.0
 
 """
+import sys
+
 from requests_toolbelt.utils import dump
 from datetime import datetime
 from loguru import logger
@@ -18,7 +20,9 @@ class ApiCheckGames:
     def __init__(self, debug=False, proxy=None):
         self.debug = debug
         logger.add(
+            sys.stdout,
             format="<green>{time:YYYY-MM-DD HH:mm:ss}</green> | <level>{level: <8}</level> | <cyan><b>{message}</b></cyan>",
+            filter="sub.module",
         )
         logger.opt(colors=True)
 
