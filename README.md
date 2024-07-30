@@ -13,14 +13,18 @@ A Python library designed to make it easier for game developers, data analysts, 
 | Proxy Support | ✔ |
 | Logger Request | ✔ |
 | 15 Games Type | ✔ |
+| Web API | ✔ |
 
 
 
 
-## Usage
+## Usage Library
 
-To use this library
-
+To use this library install `requirements.txt`
+```bash
+pip3 install -r requirements.txt
+```
+Test Example Code in `example.py` or try this code 
 ```python3
 from src.ApiCheckGames import ApiCheckGames
 
@@ -41,6 +45,110 @@ Available parameters
 | `userId` | userId Account | |
 | `zoneId` | zoneId Account | |
 
+
+Example Response Success ✔
+```json
+{
+    "status": true,
+    "server_time": "2024-07-30 16:31:29",
+    "message": "Success Requesting to API",
+    "nickname": "Martinus Krisandro Perdana Putra",
+    "type_name": "HAGO"
+}
+```
+
+Example Response Failed ❌
+```json
+{
+    "status": false,
+    "server_time": "2024-07-30 16:32:24",
+    "message": "userIDNotEligibleError",
+    "type_name": "HAGO"
+}
+```
+
+```json
+{
+    "status": false,
+    "server_time": "2024-07-30 16:32:37",
+    "message": "Invalid Request Parameter(s) [userAccount.userId must not be blank]",
+    "type_name": "HAGO"
+}
+```
+
+## Usage API
+
+To use this API
+
+#### Base Url
+
+```http
+https://api-cek-id-game-ten.vercel.app/
+```
+
+#### Get all games
+
+```http
+  GET /api/list-games
+```
+Example Response Success ✔
+```json
+{
+	"data": [
+		"eight_ball_pool",
+		"aether_gazer",
+		"arena_of_valor",
+		"auto_chess",
+		"azur_lane",
+		"bad_landers",
+		"barbarq",
+		"basketrio",
+		"call_of_duty",
+		"dragon_city",
+		"free_fire",
+		"hago",
+		"mobile_legends",
+		"point_blank",
+		"valorant"
+	],
+	"server_time": "2024-07-30 18:01:53",
+	"status": true
+}
+```
+
+
+#### Check ID Games (GET)
+
+```http
+  GET /api/check-id-game?type_name=<type_name>&userId=<userId>&zoneId=<zoneId>
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `type_name` | `string` | **Required**. Code Type Game |
+| `userId` | `string` | **Required**. userId Account |
+| `zoneId` | `string` | **Required**. zoneId Account |
+
+#### Check ID Games (POST)
+
+```http
+  POST /api/check-id-game
+```
+
+Body
+```json
+  {
+ 	"type_name": "hago",
+ 	"userId": "1084710366",
+ 	"zoneId": ""
+  }
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `type_name` | `string` | **Required**. Code Type Game |
+| `userId` | `string` | **Required**. userId Account |
+| `zoneId` | `string` | **Required**. zoneId Account |
 
 Example Response Success ✔
 ```json
