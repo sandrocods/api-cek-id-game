@@ -1,15 +1,34 @@
 {
-    "version": 2,
-    "builds": [
-        {
-            "src": "./example_web_apps/server.py",
-            "use": "@vercel/python"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/example_web_apps/server.py"
-        }
-    ]
+  "version": 2,
+  "builds": [
+    {
+      "src": "example_web_apps/server.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "src/ApiCheckGames.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "example_web_apps/api/apiCheckIdGame.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/cek-id-game",
+      "dest": "example_web_apps/server.py"
+    },
+    {
+      "src": "/api/cek-id-game/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)",
+      "dest": "example_web_apps/api/apiCheckIdGame.py"
+    },
+    {
+      "src": "/src/(.*)",
+      "dest": "src/$1"
+    }
+  ],
+  "env": {
+    "PYTHONPATH": "./src"
+  }
 }
