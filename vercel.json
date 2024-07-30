@@ -1,32 +1,26 @@
 {
   "version": 2,
   "builds": [
-
+    {
+      "src": "requirements.txt",
+      "use": "@vercel/python",
+      "config": {
+        "install": "pip install -r requirements.txt"
+      }
+    },
     {
       "src": "example_web_apps/server.py",
-      "use": "@vercel/python"
-    },
-    {
-      "src": "src/ApiCheckGames.py",
-      "use": "@vercel/python"
-    },
-    {
-      "src": "example_web_apps/api/apiCheckIdGame.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
-      "src": "/api/cek-id-game",
+      "src": "/api/(.*)",
       "dest": "example_web_apps/server.py"
     },
     {
-      "src": "/api/cek-id-game/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)",
-      "dest": "example_web_apps/api/apiCheckIdGame.py"
-    },
-    {
-      "src": "/src/(.*)",
-      "dest": "src/$1"
+      "src": "/(.*)",
+      "dest": "example_web_apps/server.py"
     }
   ],
   "env": {
